@@ -1,7 +1,7 @@
 'use strict';
 
 const users = require('../models/users.js')
-// const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 module.exports = async (req, res, next) => {
 

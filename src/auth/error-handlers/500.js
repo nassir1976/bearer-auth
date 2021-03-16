@@ -8,3 +8,11 @@ module.exports = (err, req, res, next) => {
   res.write(JSON.stringify(error));
   res.end();
 };
+
+// 'use strict';
+
+// function errorHandler (err, req, res, next){
+//   res.status(500).send( 'broke for some reason');
+// }
+
+// module.exports = errorHandler;
