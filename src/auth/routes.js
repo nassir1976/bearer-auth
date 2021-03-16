@@ -5,18 +5,19 @@ const authRouter = express.Router();
 const jwt = require('jsonwebtoken')
 const User = require('./models/users.js');
 const basicAuth = require('./middleware/basic.js')
-const bearerAuth = require('./middleware/bearer.js')
+const bearerAuth = require('./middleware/bearer.js');
+
 
 authRouter.post('/signup', async (req, res, next) => {
   try {
     let user = new User(req.body);
     const userRecord = await user.save(req.body);
-    console.log(userRecord)
-    const token = jwt.sign(user.toJSON(),process.env.SECRET,{expiresIn:900});
+    // console.log(userRecord)
+    const token = jwt.sign(user.toJSON(),process.env.SECRET);
     const output = {
 
       user: userRecord,
-      token: userRecord.token
+      token:token
     };
     console.log(output)
     res.status(201).json(output);
@@ -27,8 +28,8 @@ authRouter.post('/signup', async (req, res, next) => {
 
 authRouter.post('/signin', basicAuth, (req, res, next) => {
   const user = {
-    user: request.user,
-    token: request.user.token
+    user: req.user,
+    token: req.user.token
   };
   res.status(200).json(user);
 });

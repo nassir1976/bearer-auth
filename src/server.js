@@ -10,6 +10,7 @@ const errorHandler = require('./auth/error-handlers/500.js');
 const notFound = require('./auth/error-handlers/404.js');
 const authRoutes = require('./auth/routes.js');
 
+
 // Prepare the express app
 const app = express();
 
@@ -19,9 +20,11 @@ app.use(morgan('dev'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('./public')); // new but go ahead and add to servers for now
 
 // Routes
 app.use(authRoutes);
+
 
 // Catchalls
 app.use(notFound);

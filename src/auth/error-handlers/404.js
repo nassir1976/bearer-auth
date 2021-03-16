@@ -8,3 +8,10 @@ module.exports = (req,res,next) => {
   res.write(JSON.stringify(error));
   res.end();
 };
+
+// 'use strict';
+
+// module.exports = (req, res, next) => {
+//   res.status(404).send( 'not found' );
+//   next();
+// }

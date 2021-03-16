@@ -14,20 +14,7 @@ mongoose.connect(MONGODB_URI, options);
 
 server.start(PORT);
 
-
-// require('./src/server.js')
-// const options = {
-//   useNewUrlParser: true,
-//   useCreateIndex: true,
-//   useUnifiedTopology: true,
-// };
-// mongoose.connect(process.env.MONGODB_URI, options);
-
-// // Start the web server
-
-
-
-// mongoose.connect('mongodb://localhost:27017/auth-server-demo', mongooseOptions)
+// / mongoose.connect('mongodb://localhost:27017/auth-server-demo', options)
 //   .then(() => {
 //     app.listen(PORT, () => console.log(`server up: ${PORT}`));
 //   })
