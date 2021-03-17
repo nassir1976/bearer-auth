@@ -46,3 +46,10 @@ Rather than store a user’s information in the token, create a “session” wi
 On the server, store lookup information in a session model using that ID
 Sessions should timeout or be invalidated in some automated fashion
 Add an additional layer of encryption
+
+
+
+### Documentation
+- Compose a UML or Process/Data Flow Diagram for every application
+
+![WhiteBoard](./assets/UML.png)

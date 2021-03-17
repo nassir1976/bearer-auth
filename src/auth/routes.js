@@ -3,12 +3,13 @@
 const express = require('express');
 const authRouter = express.Router();
 const jwt = require('jsonwebtoken')
-const User = require('./models/users.js');
+const User = require('./models/users.js'); // user models
+
 const basicAuth = require('./middleware/basic.js')
 const bearerAuth = require('./middleware/bearer.js');
 
 
-authRouter.post('/signup', async (req, res, next) => {
+authRouter.post('/signup', async (req, res, next) => { //req.body ===get the form
   try {
     let user = new User(req.body);
     const userRecord = await user.save(req.body);
@@ -47,3 +48,4 @@ authRouter.get('/secret', bearerAuth, async (req, res, next) => {
 
 
 module.exports = authRouter;
+
